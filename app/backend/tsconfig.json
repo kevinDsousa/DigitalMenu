@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES2015",
+      "moduleResolution": "Node",
+      "outDir": "./dist",
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "noEmitOnError": true,
+      "noImplicitAny": true,
+    },
+    "include": ["./src/server.ts"],
+    "exclude": ["node_modules"]
+  }
