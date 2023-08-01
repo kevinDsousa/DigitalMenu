@@ -10,8 +10,8 @@ const onFinishFailed = (errorInfo: unknown) => {
 };
 
 export const RecoverPasswordUser: React.FC = () => (
-  <>
-    <h2>Cadastrar</h2>
+  <section className='flex items-center flex-col justify-center bg-slate-800'>
+    <h2 className='text-white font-mono text-2xl mb-3'>Cadastrar</h2>
     <Form
       name="basic"
       labelCol={{ span: 8 }}
@@ -30,10 +30,10 @@ export const RecoverPasswordUser: React.FC = () => (
         <Input />
       </Form.Item>
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" style={{'background-color': 'darkgreen'}} htmlType="submit">
           Recuperar Senha
         </Button>
       </Form.Item>
     </Form>
-  </>
+  </section>
 );

@@ -10,8 +10,8 @@ const onFinishFailed = (errorInfo: unknown) => {
 };
 
 export const RegisterUser: React.FC = () => (
-  <>
-    <h2>Esqueci a senha</h2>
+  <section className='flex flex-col items-center bg-slate-800 m-auto'>
+    <h2 className='text-white font-mono text-2xl mb-3'>Esqueci a senha</h2>
     <Form
       name="basic"
       labelCol={{ span: 8 }}
@@ -48,10 +48,10 @@ export const RegisterUser: React.FC = () => (
 
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" style={{'background-color': 'darkgreen'}}>
           Cadastrar usuário
         </Button>
       </Form.Item>
     </Form>
-  </>
+  </section>
 );
