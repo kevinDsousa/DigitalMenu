@@ -30,7 +30,7 @@ export const RecoverPasswordUser: React.FC = () => (
         <Input />
       </Form.Item>
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" style={{'background-color': 'darkgreen'}} htmlType="submit">
+        <Button type="primary" style={{'backgroundColor': 'darkgreen'}} htmlType="submit">
           Recuperar Senha
         </Button>
       </Form.Item>

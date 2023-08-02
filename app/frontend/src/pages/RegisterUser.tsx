@@ -48,7 +48,7 @@ export const RegisterUser: React.FC = () => (
 
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit" style={{'background-color': 'darkgreen'}}>
+        <Button type="primary" htmlType="submit" style={{'backgroundColor': 'darkgreen'}}>
           Cadastrar usuário
         </Button>
       </Form.Item>

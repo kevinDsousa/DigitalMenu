@@ -45,7 +45,7 @@ export const LoginUser: React.FC = () => (
          </Form.Item>
 
          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" style={{'background-color': 'darkgreen'}} block htmlType="submit" >
+            <Button type="primary" style={{'backgroundColor': 'darkgreen'}} block htmlType="submit" >
                Logar
             </Button>
          </Form.Item>
