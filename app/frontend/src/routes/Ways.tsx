@@ -7,7 +7,7 @@ export const Ways = () => {
     return (
         <BrowserRouter>
         <Routes>
-          <Route path="/login-user" element={<Atutentication />} />
+          <Route path="/" element={<Atutentication />} />
           <Route path="/register-user" element={<RegisterUser />} />
           <Route path="/recover-password" element={<RecoverPasswordUser />} />
         </Routes>
