@@ -1,24 +1,27 @@
 {
-    "$schema": "https://turbo.build/schema.json",
-    "pipeline": {
-      "build": {
-        "dependsOn": ["^build"],
-        "outputs": ["dist/**"]
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "sls:deploy": {
-        "cache": false
-      },
-      "sls:remove": {
-        "cache": false
-      },
-      "sls:invoke": {
-        "cache": false
-      }
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "SOME_ENV_VAR"
+      ],
+      "outputs": ["dist/**"]
+    },
+    "web#build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "SOME_OTHER_ENV_VAR"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
     }
-  }
+  },
+  "globalEnv": [
+    "GITHUB_TOKEN"
+  ],
+  "globalDependencies": [
+    "tsconfig.json"
+  ]
+}
