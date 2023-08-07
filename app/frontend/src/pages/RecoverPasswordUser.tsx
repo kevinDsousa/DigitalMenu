@@ -10,8 +10,8 @@ const onFinishFailed = (errorInfo: unknown) => {
 };
 
 export const RecoverPasswordUser: React.FC = () => (
-  <section className='flex items-center flex-col justify-center bg-slate-800'>
-    <h2 className='text-white font-mono text-2xl mb-3'>Cadastrar</h2>
+  <section className='flex flex-col items-center justify-center m-auto'>
+    <h2 className='font-mono text-center text-4xl font-bold text-white mb-5'>Recuperar senha</h2>
     <Form
       name="basic"
       labelCol={{ span: 8 }}

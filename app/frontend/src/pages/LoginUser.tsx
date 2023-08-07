@@ -1,67 +1,54 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { useLogin } from '../hooks/useLogin'
 
-const onFinish = (values: unknown) => {
-   console.log('Success:', values);
-};
+export const LoginUser: React.FC = () => {
 
-const onFinishFailed = (errorInfo: unknown) => {
-   console.log('Failed:', errorInfo);
-};
-
-export const LoginUser: React.FC = () => (
-   <div className='flex flex-col gap-2 items-center justify-center m-auto'>
+  const { handleLogin } = useLogin();
+  return (
+    <section className='flex flex-col items-center justify-center m-auto'>
       <h2 className='font-mono text-center text-4xl font-bold text-white mb-5'>Seja bem vindo</h2>
       <Form
-         name="basic"
-         labelCol={{ span: 8 }}
-         wrapperCol={{ span: 16 }}
-         style={{ maxWidth: 600 }}
-         initialValues={{ remember: true }}
-         onFinish={onFinish}
-         onFinishFailed={onFinishFailed}
-         autoComplete="on"
+        name="normal_login"
+        className="login-form w-full"
+        initialValues={{ remember: true }}
+        onFinish={handleLogin}
       >
-         <Form.Item
-            label="Usuário"
-            name="username"
-            rules={[{ required: true, message: 'Necessário inserir nome de usuário!' }]}
-            
-         >
-            <Input />
-         </Form.Item>
-
-         <Form.Item
-            label="Senha"
-            name="password"
-            rules={[{ required: true, message: 'Necessário inserir a senha!' }]}
-         >
-            <Input.Password />
-         </Form.Item>
-
-         <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-            <Checkbox>Manter Logado</Checkbox>
-         </Form.Item>
-
-         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" style={{'backgroundColor': 'darkgreen'}} block htmlType="submit" >
-               Logar
-            </Button>
-         </Form.Item>
-
-         <div className='flex'>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-               <Link to="/register-user">
-                     <span className='text-sm text-white'>Novo usuário?</span>
-               </Link>
+        <Form.Item
+          name="username"
+          rules={[{ required: true, message: 'Insira seu usuário!' }]}
+        >
+          <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Usuário" />
+        </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[{ required: true, message: 'Insira sua senha!' }]}
+        >
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Senha"
+          />
+        </Form.Item>
+        <Form.Item>
+          <div className='flex flex-col gap-3'>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+              <Checkbox><span className='text-white'>Tenho alzheimer</span></Checkbox>
             </Form.Item>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-               <Link to="/recover-password">
-                     <span className='text-sm text-white'>Joguei a senha no mato</span>
-               </Link>
-            </Form.Item>
-         </div>
+            <Link className="login-form-forgot text-white" to="/recover-password">
+              Joguei a senha no mato
+            </Link>
+          </div>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className="login-form-button w-full bg-green-500">
+            Logar
+          </Button>
+        </Form.Item>
       </Form>
-   </div>
-);
+    </section>
+  )
+};
