@@ -7,6 +7,9 @@ import { LoginContext } from "../App"
 import { AutenticationLayout } from "../layout/AutenticationLayout"
 import { DashboardLayout } from "../layout/DashboardLayout"
 import { NotFound } from "../pages/NotFound"
+import { Pedidos } from "../pages/Pedidos"
+import { Produtos } from "../pages/Produtos"
+import { Cadastrar } from "../pages/Cadastrar"
 
 export const Ways = () => {
 
@@ -22,8 +25,9 @@ export const Ways = () => {
     <Routes>
       {logado ? (
         <Route path="/" element={<DashboardLayout />}>
-          <Route path="/ver-produtos" element={<DashboardLayout />} />
-          <Route path="/cadastrar-produto" element={<DashboardLayout />} />
+          <Route path="/pedidos" element={<Pedidos />} />
+          <Route path="/cadastrar-produto" element={<Cadastrar />} />
+          <Route path="/ver-produtos" element={<Produtos />} />
         </Route>
       ) : (
         <Route path="/" element={<AutenticationLayout />}>

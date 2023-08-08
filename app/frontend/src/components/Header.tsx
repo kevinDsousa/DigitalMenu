@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Menu as MenuAnt } from "antd";
-import { HomeOutlined, FormOutlined, DesktopOutlined, TableOutlined } from "@ant-design/icons";
+import { HomeOutlined, FormOutlined, TableOutlined } from "@ant-design/icons";
 import SubMenu from "antd/es/menu/SubMenu";
 import { MenuItem } from "../types/MenuItem";
 
@@ -19,24 +19,16 @@ export const Header = () => {
             icon: <FormOutlined />,
         },
         {
-            label: "Administração",
-            key: "admin",
-            to: "admin",
-            icon: <DesktopOutlined />,
-            children: [ 
-                {
-                    label: "Cadastrar Produto",
-                    key: "novoProduto",
-                    to: "/cadastrar-produto",
-                    icon: <HomeOutlined />,
-                },
-                {
-                    label: "Ver Produtos",
-                    key: "verProdutos",
-                    to: "/ver-produtos",
-                    icon: <TableOutlined />,
-                },
-            ],
+            label: "Cadastrar Produto",
+            key: "novoProduto",
+            to: "/cadastrar-produto",
+            icon: <HomeOutlined />,
+        },
+        {
+            label: "Ver Produtos",
+            key: "verProdutos",
+            to: "/ver-produtos",
+            icon: <TableOutlined />,
         },
     ];
 
