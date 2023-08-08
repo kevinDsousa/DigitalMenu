@@ -1,14 +1,21 @@
 {
-    "compilerOptions": {
-      "module": "CommonJS",
-      "target": "ES2015",
-      "moduleResolution": "Node",
-      "outDir": "./dist",
-      "sourceMap": true,
-      "esModuleInterop": true,
-      "noEmitOnError": true,
-      "noImplicitAny": true,
-    },
-    "include": ["./src/server.ts"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
   }
+}
