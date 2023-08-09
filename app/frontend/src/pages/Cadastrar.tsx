@@ -1,10 +1,17 @@
-import { Form, Input, Select, Upload, Button } from 'antd';
+import { Form, Input, Select, Upload, Button, UploadFile } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
+interface FormValues {
+    nomeProduto: string;
+    tipo: string;
+    imagem: UploadFile[];
+    preco: number;
+}
+
 export const Cadastrar = () => {
-    const onFinish = (values) => {
+    const onFinish = (values: FormValues) => {
         console.log('Form values:', values);
     };
 
