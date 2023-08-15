@@ -15,11 +15,11 @@
       "**"
     ]
   },
-  "scripts": { 
+  "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build"
-   },
-   "devDependencies": {
+  },
+  "devDependencies": {
     "dotenv-cli": "^7.0.0",
     "eslint-config-custom": "*",
     "prettier": "latest",
